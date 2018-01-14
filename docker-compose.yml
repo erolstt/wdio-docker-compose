@@ -1,5 +1,12 @@
 version: "2"
 services:
+  sut:
+    build: .
+    command: npm test wdio.conf.remote.js
+    depends_on:
+     - chromeVNC
+     - firefoxVNC
+
   firefoxVNC:
     image: selenium/node-firefox-debug:3.8.1-chlorine
     volumes:
