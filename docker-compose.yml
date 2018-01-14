@@ -1,0 +1,28 @@
+version: "2"
+services:
+  firefoxVNC:
+    image: selenium/node-firefox-debug:3.8.1-chlorine
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - hub
+    environment:
+      HUB_HOST: hub
+    ports:
+      - "5900:5900"
+
+  chromeVNC:
+    image: selenium/node-chrome-debug:3.8.1-chlorine
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - hub
+    environment:
+      HUB_HOST: hub
+    ports:
+      - "5901:5900"
+
+  hub:
+    image: selenium/hub:3.8.1-chlorine
+    ports:
+      - "4444:4444"

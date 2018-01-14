@@ -1,7 +1,7 @@
 exports.config = {
     port: '4444',
     path: '/wd/hub',
-    host: 'localhost',
+    host: 'hub',
     protocol: 'http',
 
     //
