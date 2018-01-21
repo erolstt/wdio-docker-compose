@@ -19,7 +19,7 @@ describe('Register Simple form actions', function () {
     it('should clear the form', function () {
         HomePage.open();
         HomePage.selectForm('Register (Simple)');
-        RegisterSimplePage.fillForm("Erol Selitektay", "selitektay@gmail.com", "selitektay@gmail.com", "123secret", "10");
+        RegisterSimplePage.fillForm(registerData.userName, registerData.email, registerData.emailConfirmation, registerData.password, registerData.devSkills);
         FormButtons.clearForm();
         expect(RegisterSimplePage.userName.getText()).to.be.equal("");
     });
@@ -27,7 +27,7 @@ describe('Register Simple form actions', function () {
     it('should reset the form', function () {
         HomePage.open();
         HomePage.selectForm('Register (Simple)');
-        RegisterSimplePage.fillForm("Erol Selitektay", "selitektay@gmail.com", "selitektay@gmail.com", "123secret", "10");
+        RegisterSimplePage.fillForm(registerData.userName, registerData.email, registerData.emailConfirmation, registerData.password, registerData.devSkills);
         FormButtons.resetForm();
         console.log(RegisterSimplePage.userName.getValue());
         expect(RegisterSimplePage.userName.getValue()).to.be.equal("SteveJobs");
