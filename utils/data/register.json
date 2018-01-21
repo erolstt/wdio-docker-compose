@@ -1,0 +1,7 @@
+{
+  "userName":"Test User",
+  "email":"test@email.com",
+  "emailConfirmation":"test@email.com",
+  "password":"123secret",
+  "devSkills":"9"
+}

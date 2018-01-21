@@ -2,12 +2,17 @@ var expect = require('chai').expect;
 var HomePage = require('../pages/home')
 var RegisterSimplePage = require('../pages/registersimple.page')
 var FormButtons = require('../pages/form.buttons')
+var jsonfile = require('jsonfile')
 
 describe('Register Simple form actions', function () {
+
+  var registerDataPath = './utils/data/register.json';
+  var registerData = jsonfile.readFileSync(registerDataPath);
+
     it('should submit the form', function () {
         HomePage.open();
         HomePage.selectForm('Register (Simple)');
-        RegisterSimplePage.fillForm("Erol Selitektay", "selitektay@gmail.com", "selitektay@gmail.com", "123secret", "10");
+        RegisterSimplePage.fillForm(registerData.userName, registerData.email, registerData.emailConfirmation, registerData.password, registerData.devSkills);
         FormButtons.submitForm();
     });
 

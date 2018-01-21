@@ -10,6 +10,7 @@
   "devDependencies": {
     "allure-commandline": "^2.5.0",
     "chai": "^4.1.2",
+    "jsonfile": "^4.0.0",
     "wdio-allure-reporter": "^0.1.2",
     "wdio-chromedriver-service": "^0.1.2",
     "wdio-mocha-framework": "^0.5.12"
