@@ -8,3 +8,15 @@ and Firefox browser.
 ```
 docker-compose up
 ```
+
+## Running docker-compose in jenkins
+
+```
+docker-compose build
+
+docker-compose run sut
+
+echo $?
+
+docker cp wdiodockercompose_sut_run_1:/e2e-tests/allure-results $WORKSPACE
+```
